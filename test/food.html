@@ -10,7 +10,7 @@
 <div class="favFood">
 <h1>가장 좋아하는 음식</h1>
 <select name='food1'>
-    <option value='choice'>--선택--</option>
+    <option>--선택--</option>
     <option value='korean'>한식</option>
     <option value='schoolFood'>분식</option>
     <option value='etc'>기타</option>
@@ -28,8 +28,10 @@ $("select[name='food1']").mouseleave(function(){
         kind1=select.append(option1).append(option2).append(option3).append(option4)
         $('.kind').append(kind1)
         $(document).on('mouseleave','.korean',function(){
-            alert('좋아하는 음식은 '+$('.korean>option:selected').val())
-            return;
+            if($('.korean>option:selected').val()!='choice'){
+                alert('좋아하는 음식은 '+$('.korean>option:selected').val())
+                return;
+            }
         })
     }
     if($('select[name="food1"]>option:selected').val()=='schoolFood'){
@@ -41,8 +43,10 @@ $("select[name='food1']").mouseleave(function(){
         kind1=select.append(option1).append(option2).append(option3).append(option4)
         $('.kind').append(kind1)
         $(document).on('mouseleave','.schoolFood',function(){
-            alert('좋아하는 음식은 '+$('.schoolFood>option:selected').val())
-            return;
+            if($('.schoolFood>option:selected').val()!='choice'){
+                alert('좋아하는 음식은 '+$('.schoolFood>option:selected').val())
+                return;
+            }
         })
     }
     if($('select[name="food1"]>option:selected').val()=='etc'){
@@ -54,8 +58,10 @@ $("select[name='food1']").mouseleave(function(){
         kind1=select.append(option1).append(option2).append(option3).append(option4)
         $('.kind').append(kind1)
         $(document).on('mouseleave','.etc',function(){
-            alert('좋아하는 음식은 '+$('.etc>option:selected').val())
-            return;
+            if($('.etc>option:selected').val()!='choice'){
+                alert('좋아하는 음식은 '+$('.etc>option:selected').val())
+                return;
+            }
         })
     }
 })
